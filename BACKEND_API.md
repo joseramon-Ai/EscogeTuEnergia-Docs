@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 1. [Información General](#información-general)
 2. [Autenticación y Seguridad](#autenticación-y-seguridad)
@@ -18,7 +18,7 @@
 
 ## Información General
 
-### 🔧 Configuración del Backend
+###  Configuración del Backend
 
 | Aspecto | Detalle |
 |---------|---------|
@@ -30,7 +30,7 @@
 | **Base Path** | `/api` |
 | **Arquitectura** | Layered (Routes → Services → Repositories) |
 
-### 📁 Estructura de Carpetas
+###  Estructura de Carpetas
 
 ```
 server/src/
@@ -48,7 +48,7 @@ server/src/
 
 ## Autenticación y Seguridad
 
-### 🔐 Sistema de Autenticación
+###  Sistema de Autenticación
 
 El backend utiliza **JWT (JSON Web Tokens)** con dos tipos de tokens:
 
@@ -64,7 +64,7 @@ El backend utiliza **JWT (JSON Web Tokens)** con dos tipos de tokens:
 - **Almacenamiento**: Base de datos (tabla `user_sessions`)
 - **Seguridad**: Hash del token almacenado en BD
 
-### 🔑 Estructura del Token (JWT Payload)
+###  Estructura del Token (JWT Payload)
 
 ```typescript
 {
@@ -77,7 +77,7 @@ El backend utiliza **JWT (JSON Web Tokens)** con dos tipos de tokens:
 }
 ```
 
-### 🛡️ Middleware de Autenticación
+### ️ Middleware de Autenticación
 
 #### `authenticate`
 
@@ -113,7 +113,7 @@ router.post('/admin-only', authenticate, requireAdmin, handler);
 **Error Response:**
 - `403` - No tiene permisos de administrador
 
-### 🔒 Capas de Seguridad
+###  Capas de Seguridad
 
 | Capa | Tecnología | Propósito |
 |------|-----------|----------|
@@ -126,7 +126,7 @@ router.post('/admin-only', authenticate, requireAdmin, handler);
 | **HPP** | hpp | Protección contra parameter pollution |
 | **Compression** | compression | Compresión gzip de respuestas |
 
-### 🔄 Flujo de Autenticación
+###  Flujo de Autenticación
 
 ```
 1. REGISTER/LOGIN
@@ -150,7 +150,7 @@ router.post('/admin-only', authenticate, requireAdmin, handler);
 10. Cliente recibe nuevos tokens
 ```
 
-### 🚪 Logout
+###  Logout
 
 - Cliente envía Refresh Token a `/api/auth/logout`
 - Server elimina la sesión de la tabla `user_sessions`
@@ -160,13 +160,13 @@ router.post('/admin-only', authenticate, requireAdmin, handler);
 
 ## Listado de Endpoints
 
-### 📡 Base URL
+###  Base URL
 
 ```
 http://localhost:4005/api
 ```
 
-### 🔓 Módulo: Autenticación (`/auth`)
+###  Módulo: Autenticación (`/auth`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -275,7 +275,7 @@ http://localhost:4005/api
 
 ---
 
-### 👤 Módulo: Usuarios (`/user`)
+###  Módulo: Usuarios (`/user`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -355,7 +355,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-### 📄 Módulo: Facturas (`/bills`)
+###  Módulo: Facturas (`/bills`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -429,7 +429,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-### 💡 Módulo: Tarifas (`/tariffs`)
+###  Módulo: Tarifas (`/tariffs`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -522,7 +522,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-### 📊 Módulo: Consumo (`/consumption`)
+###  Módulo: Consumo (`/consumption`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -553,7 +553,7 @@ ES0021000000000001AA,2025-12-01,01:00,0.3
 
 ---
 
-### 🔄 Módulo: Sincronización Datadis (`/datadis`)
+###  Módulo: Sincronización Datadis (`/datadis`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -592,7 +592,7 @@ ES0021000000000001AA,2025-12-01,01:00,0.3
 
 ---
 
-### 💰 Módulo: Recomendaciones (`/recommendations`)
+###  Módulo: Recomendaciones (`/recommendations`)
 
 | Método | Endpoint | Auth | Descripción |
 |--------|----------|------|-------------|
@@ -673,7 +673,7 @@ GET /solar/building-insights?lat=40.4168&lng=-3.7038&peakpower=5
 
 ## Servicios Principales
 
-### 🔐 AuthService
+###  AuthService
 
 **Archivo:** `services/auth.service.ts`
 
@@ -716,7 +716,7 @@ splitFullName(fullName): { firstName, lastName }
 
 ---
 
-### 👤 UserService
+###  UserService
 
 **Archivo:** `services/user.service.ts`
 
@@ -740,7 +740,7 @@ splitFullName(fullName): { firstName, lastName }
 
 ---
 
-### 📄 BillService
+###  BillService
 
 **Archivo:** `services/bill.service.ts`
 
@@ -764,7 +764,7 @@ splitFullName(fullName): { firstName, lastName }
 
 ---
 
-### 💡 TariffService
+###  TariffService
 
 **Archivo:** `services/tariff.service.ts`
 
@@ -808,7 +808,7 @@ splitFullName(fullName): { firstName, lastName }
 
 ---
 
-### 📊 ConsumptionService
+###  ConsumptionService
 
 **Archivo:** `services/consumption.service.ts`
 
@@ -836,7 +836,7 @@ ES0021000000000001AA,2025-12-01,00:00,0.5
 
 ---
 
-### 🔄 DatadisService
+###  DatadisService
 
 **Archivo:** `services/datadis.service.ts`
 
@@ -874,7 +874,7 @@ syncConsumption(userId, username, password): Promise<SyncResult>
 
 ---
 
-### 💰 RecommendationService
+###  RecommendationService
 
 **Archivo:** `services/recommendation.service.ts`
 
@@ -966,7 +966,7 @@ export const entityRepository = {
 }
 ```
 
-### 📁 Repositorios Disponibles:
+###  Repositorios Disponibles:
 
 | Archivo | Entidad | Responsabilidad |
 |---------|---------|-----------------|
@@ -1008,7 +1008,7 @@ export const userRepository = {
 
 ## Middlewares
 
-### 🔐 `authenticate`
+###  `authenticate`
 
 **Archivo:** `middleware/auth.ts`
 
@@ -1028,7 +1028,7 @@ app.get('/protected', authenticate, handler);
 
 ---
 
-### 👮 `requireAdmin`
+###  `requireAdmin`
 
 **Archivo:** `middleware/auth.ts`
 
@@ -1099,7 +1099,7 @@ ZodError
 
 ---
 
-### 🔄 `asyncHandler`
+###  `asyncHandler`
 
 **Archivo:** `utils/async-handler.ts`
 
@@ -1117,7 +1117,7 @@ app.get('/endpoint', asyncHandler(async (req, res) => {
 
 ## Manejo de Errores
 
-### 🚨 Clase AppError
+###  Clase AppError
 
 ```typescript
 class AppError extends Error {
@@ -1191,9 +1191,9 @@ class AppError extends Error {
 
 ---
 
-## 🔧 Utilidades
+##  Utilidades
 
-### 🔑 Tokens (JWT)
+###  Tokens (JWT)
 
 **Archivo:** `utils/tokens.ts`
 
@@ -1213,7 +1213,7 @@ verifyRefreshToken(token): TokenPayload
 
 ---
 
-### 🔐 Password
+###  Password
 
 **Archivo:** `utils/password.ts`
 
@@ -1233,7 +1233,7 @@ compareTokenHash(token, hash): Promise<boolean>
 
 ---
 
-### 🔄 Transformers
+###  Transformers
 
 **Archivo:** `utils/transformers.ts`
 
@@ -1255,7 +1255,7 @@ toEnergyProfileResponse(profile): EnergyProfileResponse
 
 ---
 
-## 📊 Resumen de Arquitectura
+##  Resumen de Arquitectura
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -1318,7 +1318,7 @@ toEnergyProfileResponse(profile): EnergyProfileResponse
 
 ---
 
-## 📚 Referencias
+##  Referencias
 
 - [Express Documentation](https://expressjs.com/)
 - [Prisma Documentation](https://www.prisma.io/docs/)

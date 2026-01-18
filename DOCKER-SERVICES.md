@@ -2,7 +2,7 @@
 
 Este proyecto tiene dos instancias corriendo en paralelo: **Principal** y **Fork**.
 
-## 🎯 Configuración de Servicios
+##  Configuración de Servicios
 
 ### Servicio Principal
 - **Backend**: Puerto 4005 (http://localhost:4005)
@@ -16,7 +16,7 @@ Este proyecto tiene dos instancias corriendo en paralelo: **Principal** y **Fork
 - **Archivo de configuración**: `docker-compose.fork.yml`
 - **Variables de entorno**: `.env.fork`
 
-## 📋 Comandos Rápidos
+##  Comandos Rápidos
 
 ### Usando el script de gestión (Recomendado)
 
@@ -57,7 +57,7 @@ docker compose -p escogetuenergia-fork -f docker-compose.fork.yml down
 docker compose -p escogetuenergia-fork -f docker-compose.fork.yml logs -f
 ```
 
-## 🔧 Cambios Realizados
+##  Cambios Realizados
 
 ### Correcciones aplicadas:
 1. ✅ Corregido error "Failed to fetch" al hacer login
@@ -81,7 +81,7 @@ docker compose -p escogetuenergia-fork -f docker-compose.fork.yml logs -f
 - **Principal**: http://128.140.64.33:3005
 - **Fork**: http://128.140.64.33:3006
 
-## 🔍 Verificación de Estado
+##  Verificación de Estado
 
 Para verificar que todo funciona correctamente:
 
@@ -97,7 +97,7 @@ docker ps | grep escogetuenergia
 ./docker-manager.sh status
 ```
 
-## 🚀 Flujo de Trabajo Recomendado
+##  Flujo de Trabajo Recomendado
 
 1. **Desarrollo en Fork**: Hacer cambios y probar en el fork (puerto 4010/3006)
 2. **Estabilización**: Cuando el fork esté estable, copiar cambios al principal

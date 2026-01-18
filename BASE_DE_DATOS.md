@@ -258,7 +258,7 @@ erDiagram
     }
 ```
 
-### 📌 Diagrama por Módulos
+###  Diagrama por Módulos
 
 #### Módulo 1: Usuarios y Autenticación
 
@@ -459,7 +459,7 @@ erDiagram
 
 ---
 
-### 🔑 Tabla: `user_sessions`
+###  Tabla: `user_sessions`
 
 **Descripción**: Gestiona las sesiones activas de los usuarios (JWT refresh tokens).
 
@@ -509,7 +509,7 @@ erDiagram
 
 ---
 
-### 📄 Tabla: `bills`
+###  Tabla: `bills`
 
 **Descripción**: Facturas eléctricas subidas por los usuarios.
 
@@ -551,7 +551,7 @@ erDiagram
 
 ---
 
-### 🕐 Tabla: `hourly_consumptions`
+###  Tabla: `hourly_consumptions`
 
 **Descripción**: Registros de consumo eléctrico por hora (importado desde Datadis).
 
@@ -575,7 +575,7 @@ erDiagram
 
 ---
 
-### 📅 Tabla: `monthly_consumptions`
+###  Tabla: `monthly_consumptions`
 
 **Descripción**: Consumos mensuales agregados por periodo tarifario (P1-P6).
 
@@ -602,7 +602,7 @@ erDiagram
 
 ---
 
-### 🎮 Tabla: `gamification_stats`
+###  Tabla: `gamification_stats`
 
 **Descripción**: Estadísticas de gamificación del usuario (puntos, nivel, ahorros).
 
@@ -639,7 +639,7 @@ erDiagram
 
 ---
 
-### 👥 Tabla: `buying_groups`
+###  Tabla: `buying_groups`
 
 **Descripción**: Grupos de compra colectiva de energía.
 
@@ -661,7 +661,7 @@ erDiagram
 
 ---
 
-### 🤝 Tabla: `group_memberships`
+###  Tabla: `group_memberships`
 
 **Descripción**: Relación muchos-a-muchos entre usuarios y grupos de compra.
 
@@ -707,7 +707,7 @@ erDiagram
 
 ---
 
-### 📁 Tabla: `ForumCategory`
+###  Tabla: `ForumCategory`
 
 **Descripción**: Categorías del foro comunitario.
 
@@ -753,7 +753,7 @@ erDiagram
 
 ---
 
-### 💭 Tabla: `ForumPost`
+###  Tabla: `ForumPost`
 
 **Descripción**: Respuestas/comentarios en los temas del foro.
 
@@ -774,7 +774,7 @@ erDiagram
 
 ## Tipos de Datos y Enumeraciones
 
-### 🔢 Tipos de Datos Prisma → MySQL
+###  Tipos de Datos Prisma → MySQL
 
 | Tipo Prisma | Tipo MySQL | Ejemplo |
 |-------------|------------|---------|
@@ -965,7 +965,7 @@ Todos los `FK` tienen índices automáticos:
 
 ## Políticas de Eliminación
 
-### 🗑️ ON DELETE CASCADE
+### ️ ON DELETE CASCADE
 
 Cuando se elimina un usuario, se eliminan automáticamente:
 

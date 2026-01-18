@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 1. [Información General](#información-general)
 2. [Arquitectura del Frontend](#arquitectura-del-frontend)
@@ -20,7 +20,7 @@
 
 ## Información General
 
-### 🎨 Stack Tecnológico
+###  Stack Tecnológico
 
 | Tecnología | Versión | Propósito |
 |------------|---------|----------|
@@ -37,7 +37,7 @@
 | **Lucide React** | 0.462.0 | Iconos |
 | **Recharts** | 2.15.4 | Gráficos y visualizaciones |
 
-### 📁 Estructura del Proyecto
+###  Estructura del Proyecto
 
 ```
 src/
@@ -139,7 +139,7 @@ src/
 
 ## Arquitectura del Frontend
 
-### 🏗️ Patrón de Arquitectura
+### ️ Patrón de Arquitectura
 
 **Arquitectura por Capas (Layered Architecture)**
 
@@ -205,7 +205,7 @@ src/
        └─────────────────────────────┘
 ```
 
-### 🔄 Flujo de Datos
+###  Flujo de Datos
 
 ```
 User Interaction
@@ -231,13 +231,13 @@ UI Update
 
 ## Gestión de Estado
 
-### 🗄️ Estrategia de Estado Multi-Capa
+### ️ Estrategia de Estado Multi-Capa
 
 El frontend utiliza **múltiples estrategias de estado** según el tipo de datos:
 
 #### 1. **Estado Global: React Context API**
 
-**📦 AuthContext (Autenticación)**
+** AuthContext (Autenticación)**
 
 - **Archivo**: `src/app/providers/auth-provider.tsx`
 - **Propósito**: Gestión de sesión de usuario y tokens JWT
@@ -367,10 +367,10 @@ function BillsList() {
 
 **Ventajas:**
 - ⚡ Caché automático de respuestas
-- 🔄 Sincronización automática en background
-- 📡 Deduplicación de requests
+-  Sincronización automática en background
+-  Deduplicación de requests
 - ♻️ Revalidación automática
-- 🎯 Estados de carga/error integrados
+-  Estados de carga/error integrados
 
 ---
 
@@ -453,7 +453,7 @@ clearSession(): void
 
 ---
 
-### 📊 Resumen de Estrategias de Estado
+###  Resumen de Estrategias de Estado
 
 | Tipo de Estado | Librería/Método | Alcance | Persistencia | Uso |
 |----------------|-----------------|---------|--------------|-----|
@@ -468,7 +468,7 @@ clearSession(): void
 
 ## Rutas del Cliente
 
-### 🗺️ Configuración de Rutas
+### ️ Configuración de Rutas
 
 **Archivo**: `src/app/router.tsx`
 
@@ -478,7 +478,7 @@ clearSession(): void
 - ✅ **Suspense**: Loading screen durante carga de chunks
 - ✅ **404 Fallback**: Página NotFound para rutas no existentes
 
-### 📍 Mapa Completo de Rutas
+###  Mapa Completo de Rutas
 
 | Ruta | Componente | Descripción | Auth |
 |------|-----------|-------------|------|
@@ -503,7 +503,7 @@ clearSession(): void
 - ✅ = Requiere autenticación
 - ❌ = Público
 
-### 🔐 Protección de Rutas
+###  Protección de Rutas
 
 **Nota**: Actualmente no hay protección de rutas implementada en el router. Las páginas que requieren autenticación muestran un mensaje de login si el usuario no está autenticado.
 
@@ -531,7 +531,7 @@ function ProtectedRoute({ children }: { children: ReactNode }) {
 />
 ```
 
-### 🔗 Navegación Programática
+###  Navegación Programática
 
 **Desde componentes:**
 ```typescript
@@ -559,7 +559,7 @@ import { Link } from "react-router-dom";
 
 ## Jerarquía de Componentes
 
-### 🌳 Árbol de Componentes Principal
+###  Árbol de Componentes Principal
 
 ```
 <StrictMode>
@@ -583,7 +583,7 @@ import { Link } from "react-router-dom";
                       └─ ...más rutas
 ```
 
-### 📄 Jerarquía de Página Típica
+###  Jerarquía de Página Típica
 
 **Ejemplo: Index.tsx (Dashboard Principal)**
 
@@ -629,7 +629,7 @@ import { Link } from "react-router-dom";
           └─ Steps (Bienvenida, Perfil, Preferencias)
 ```
 
-### 🔀 Flujo de Props (Ejemplo: Navigation)
+###  Flujo de Props (Ejemplo: Navigation)
 
 ```
 <PageLayout>
@@ -668,7 +668,7 @@ import { Link } from "react-router-dom";
 
 ## Componentes Principales
 
-### 🧩 Componentes de Layout
+###  Componentes de Layout
 
 #### **PageLayout**
 **Archivo**: `src/app/layouts/page-layout.tsx`
@@ -709,7 +709,7 @@ interface PageLayoutProps {
 
 ---
 
-### 🎯 Componentes de Feature
+###  Componentes de Feature
 
 #### **CalculatorSection**
 **Archivo**: `src/components/calculator-section.tsx`
@@ -774,7 +774,7 @@ Panel lateral con perfil del usuario y opciones de edición.
 
 ---
 
-### 🎨 Componentes UI (shadcn/ui)
+###  Componentes UI (shadcn/ui)
 
 **Ubicación**: `src/components/ui/`
 
@@ -884,7 +884,7 @@ toast({
 
 ## Servicios
 
-### 📡 Servicios de API
+###  Servicios de API
 
 **Base Config**: `src/services/config.ts`
 
@@ -910,7 +910,7 @@ apiClient.interceptors.request.use((config) => {
 
 ---
 
-### 🔌 Servicios Disponibles
+###  Servicios Disponibles
 
 #### **billsService**
 **Archivo**: `src/services/bills.ts`
@@ -961,7 +961,7 @@ solarService.getBuildingInsights(params: {
 
 ## Estilos y UI
 
-### 🎨 Sistema de Diseño
+###  Sistema de Diseño
 
 **Framework**: Tailwind CSS v3.4.17
 
@@ -976,7 +976,7 @@ solarService.getBuildingInsights(params: {
 
 ---
 
-### 🌈 Paleta de Colores
+###  Paleta de Colores
 
 **Archivo**: `src/index.css`
 
@@ -1003,7 +1003,7 @@ solarService.getBuildingInsights(params: {
 
 ---
 
-### 📱 Breakpoints Responsive
+###  Breakpoints Responsive
 
 | Breakpoint | Clase Tailwind | Pixels |
 |------------|----------------|--------|
@@ -1031,7 +1031,7 @@ animation: {
 
 ---
 
-## 📊 Resumen de Arquitectura
+##  Resumen de Arquitectura
 
 ### Flujo Completo de Autenticación
 
@@ -1091,7 +1091,7 @@ animation: {
 
 ---
 
-## 🚀 Performance y Optimizaciones
+##  Performance y Optimizaciones
 
 ### ⚡ Técnicas Implementadas
 
@@ -1107,7 +1107,7 @@ animation: {
 
 ---
 
-## 📚 Referencias
+##  Referencias
 
 - [React Documentation](https://react.dev/)
 - [React Router v6](https://reactrouter.com/)

@@ -2,7 +2,7 @@
 
 Aplicación completa para comparar tarifas energéticas, gestionar usuarios y operar con facturas. Incluye frontend en React + Vite + TypeScript y backend en Node/Express con Prisma sobre MySQL.
 
-## 📚 Documentación Técnica Completa
+##  Documentación Técnica Completa
 
 Este proyecto cuenta con una suite completa de documentación técnica (5,738 líneas, ~114 páginas):
 

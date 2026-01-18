@@ -27,7 +27,7 @@
 - **Base de Datos**: MySQL 8.0+ (puerto 3306, acceso remoto via túnel)
 - **Administración BD**: Adminer web (puerto 8080, desarrollo solo)
 
-### 🏗️ Arquitectura de Despliegue
+### ️ Arquitectura de Despliegue
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -98,7 +98,7 @@ DATABASE_URL: "mysql://joseramon:${DB_PASSWORD}@mysql_main:3306/EscogeTuEnergia"
 # NO usar nombres diferentes (EscogeTu, Fork, Testing, etc.)
 ```
 
-### 🛠️ Verificación y Limpieza
+### ️ Verificación y Limpieza
 
 ```bash
 # 1. Ver qué contenedores tienes activos
@@ -121,7 +121,7 @@ docker network create data-stack_default
 docker compose up -d
 ```
 
-### 📋 Tabla de Referencia
+###  Tabla de Referencia
 
 | Proyecto | BD | Host | Puerto | Estado |
 |----------|----|----|-----|----|
@@ -131,7 +131,7 @@ docker compose up -d
 ---
 
 
-### 📋 Requisitos Previos
+###  Requisitos Previos
 
 ```bash
 # Sistema operativo: Linux, macOS, Windows (WSL2)
@@ -146,7 +146,7 @@ docker --version     # 24.x.x
 docker-compose --version  # 2.x.x
 ```
 
-### 🚀 Opción 1: Instalación Manual (Sin Docker)
+###  Opción 1: Instalación Manual (Sin Docker)
 
 #### Paso 1: Clonar repositorio y preparar proyecto
 
@@ -229,7 +229,7 @@ npm run dev
 npm run lint:watch
 ```
 
-### 🐳 Opción 2: Instalación con Docker (Recomendado)
+###  Opción 2: Instalación con Docker (Recomendado)
 
 #### Paso 1: Preparar variables de entorno
 
@@ -516,7 +516,7 @@ fi
 
 ## Docker & Contenedores
 
-### 🐳 Estructura de Imágenes Docker
+###  Estructura de Imágenes Docker
 
 #### Frontend Dockerfile (Imagen Multi-stage)
 
@@ -577,7 +577,7 @@ CMD ["node", "dist/server.js"]
 - Dependencies en imagen final
 - Node:20 (no slim) por binarios necesarios
 
-### 📋 Docker Compose - Configuración
+###  Docker Compose - Configuración
 
 #### docker-compose.yml (Servicio Principal)
 
@@ -640,7 +640,7 @@ services:
 
 ## Despliegue en Producción
 
-### 🚀 Pasos para Poner en Producción
+###  Pasos para Poner en Producción
 
 #### Fase 1: Preparación del Servidor
 
@@ -831,7 +831,7 @@ systemctl enable escogetuenergia.service
 systemctl start escogetuenergia.service
 ```
 
-### 📊 Checklist de Producción
+###  Checklist de Producción
 
 ```bash
 # ✅ Pre-deployment
@@ -887,7 +887,7 @@ GitHub Actions triggered
               Notification
 ```
 
-### 🚀 CD Manual (Opcional)
+###  CD Manual (Opcional)
 
 Para desplegar manualmente en producción:
 
@@ -917,7 +917,7 @@ docker compose logs -f
 
 ## Monitoreo y Logs
 
-### 📊 Visualizar Logs de Contenedores
+###  Visualizar Logs de Contenedores
 
 ```bash
 # Ver logs en tiempo real del backend
@@ -936,7 +936,7 @@ docker compose logs -t backend
 docker compose logs backend > backend-logs.txt
 ```
 
-### 🔍 Inspeccionar Contenedores
+###  Inspeccionar Contenedores
 
 ```bash
 # Conectarse a la shell del contenedor
@@ -956,7 +956,7 @@ docker stats
 docker inspect escogetuenergia-backend
 ```
 
-### 📈 Monitoreo Básico con Docker
+###  Monitoreo Básico con Docker
 
 ```bash
 # Script de monitoreo simple
@@ -1187,7 +1187,7 @@ docker compose logs -f backend | grep -i cors
 ./docker-manager.sh all-down && ./docker-manager.sh all-up
 ```
 
-### 🔧 Comandos de Debugging Útiles
+###  Comandos de Debugging Útiles
 
 ```bash
 # Ver estado completo
@@ -1214,7 +1214,7 @@ docker compose exec backend env | grep -E "DATABASE|JWT|NODE"
 cat .env | grep -v "^#" | grep "="
 ```
 
-### 📚 Recursos Útiles
+###  Recursos Útiles
 
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Compose Reference](https://docs.docker.com/compose/compose-file/)
@@ -1225,7 +1225,7 @@ cat .env | grep -v "^#" | grep "="
 
 ---
 
-## 📞 Soporte y Contacto
+##  Soporte y Contacto
 
 Para problemas específicos:
 

@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 1. [Tech Stack](#tech-stack)
 2. [Arquitectura de Alto Nivel](#arquitectura-de-alto-nivel)
@@ -17,7 +17,7 @@
 
 ## Tech Stack
 
-### 🎯 Frontend
+###  Frontend
 
 | Categoría | Tecnología | Versión | Propósito |
 |-----------|------------|---------|----------|
@@ -37,7 +37,7 @@
 | **Temas** | next-themes | 0.3.0 | Gestión de temas (light/dark) |
 | **Testing** | Vitest + Testing Library | 2.1.8 / 16.2.0 | Unit & integration tests |
 
-### 🔧 Backend
+###  Backend
 
 | Categoría | Tecnología | Versión | Propósito |
 |-----------|------------|---------|----------|
@@ -61,7 +61,7 @@
 | **Fechas** | dayjs | 1.11.19 | Manipulación de fechas (alternativa Moment.js) |
 | **Testing** | Vitest | 2.1.8 | Test runner compatible con Jest |
 
-### 🏗️ DevOps & Herramientas
+### ️ DevOps & Herramientas
 
 | Herramienta | Versión | Propósito |
 |-------------|---------|----------|
@@ -168,7 +168,7 @@
 
 ## Estructura del Proyecto
 
-### 🎨 Frontend: `src/`
+###  Frontend: `src/`
 
 ```
 src/
@@ -286,7 +286,7 @@ src/
 
 ---
 
-### 🔧 Backend: `server/src/`
+###  Backend: `server/src/`
 
 ```
 server/
@@ -396,7 +396,7 @@ server/
 
 ---
 
-### 📊 Base de Datos: Modelos Principales
+###  Base de Datos: Modelos Principales
 
 ```
 User
@@ -698,7 +698,7 @@ REFRESH_TOKEN_EXPIRES_IN=7d
 
 ---
 
-### 🚀 CI/CD (GitHub Actions)
+###  CI/CD (GitHub Actions)
 
 Ubicado en `.github/workflows/ci.yml`:
 
@@ -713,7 +713,7 @@ Se ejecuta en cada **push** y **pull request**.
 
 ---
 
-### 🐳 Docker (Opcional)
+###  Docker (Opcional)
 
 - `Dockerfile`: Imagen para aplicación web
 - `server/Dockerfile`: Imagen para API
@@ -762,7 +762,7 @@ mysql --version   # 8.0 o superior
 
 ---
 
-### 📋 Paso 1: Preparar el Entorno
+###  Paso 1: Preparar el Entorno
 
 #### 1.1 Clonar o descargar el proyecto
 ```bash
@@ -963,7 +963,7 @@ npm run dev
 
 ---
 
-### 🔧 Parar los Servicios
+###  Parar los Servicios
 
 Para detener todos los servicios:
 
@@ -973,7 +973,7 @@ Para detener todos los servicios:
 
 ---
 
-### 🐳 Alternativa: Levantar con Docker (Opcional)
+###  Alternativa: Levantar con Docker (Opcional)
 
 Si prefieres usar Docker Compose:
 
@@ -1058,7 +1058,7 @@ npm run prisma:migrate  # Si hiciste cambios al schema
 
 ---
 
-## �📚 Referencias Adicionales
+## � Referencias Adicionales
 
 - [Prisma Docs](https://www.prisma.io/docs/)
 - [Express Docs](https://expressjs.com/)

@@ -1,10 +1,10 @@
-# 📥 Instrucciones de Descarga - Documentación Completa
+#  Instrucciones de Descarga - Documentación Completa
 
-## 📦 Archivo Comprimido Disponible
+##  Archivo Comprimido Disponible
 
 Se ha generado un archivo `documentacion_escogetuenergia.tar.gz` (47 KB) que contiene:
 
-### 📄 Documentos Incluidos
+###  Documentos Incluidos
 
 1. ✅ **README_TECNICO.md** (38 KB)
    - Stack tecnológico completo
@@ -53,7 +53,7 @@ Se ha generado un archivo `documentacion_escogetuenergia.tar.gz` (47 KB) que con
 
 ---
 
-## 🔴 Cambios Importantes Realizados
+##  Cambios Importantes Realizados
 
 ### 1. **Base de Datos Compartida**
 - Todos los docker-compose ahora usan ÚNICA BD: `EscogeTuEnergia`
@@ -72,7 +72,7 @@ Se ha generado un archivo `documentacion_escogetuenergia.tar.gz` (47 KB) que con
 
 ---
 
-## 📥 Cómo Descargar
+##  Cómo Descargar
 
 ### Opción 1: Descargar archivo comprimido (Recomendado)
 
@@ -101,7 +101,7 @@ Los archivos están disponibles en:
 
 ---
 
-## 📋 Checklist de Implementación
+##  Checklist de Implementación
 
 Antes de usar la documentación, sigue estos pasos:
 
@@ -167,7 +167,7 @@ docker compose logs backend | grep -i database
 
 ---
 
-## 🚨 Problemas Conocidos y Soluciones Rápidas
+##  Problemas Conocidos y Soluciones Rápidas
 
 ### Problema: "Backend no arranca"
 **Solución:** Ver logs
@@ -199,7 +199,7 @@ docker compose up -d
 
 ---
 
-## 📞 Resumen de Cambios en la Documentación
+##  Resumen de Cambios en la Documentación
 
 | Documento | Cambios | Estado |
 |-----------|---------|--------|
@@ -213,7 +213,7 @@ docker compose up -d
 
 ---
 
-## 📥 Instrucciones de Copia Manual a tu Equipo
+##  Instrucciones de Copia Manual a tu Equipo
 
 Si no puedes descargar el .tar.gz, copia estos archivos manualmente:
 
@@ -254,7 +254,7 @@ curl -X POST http://localhost:4005/auth/login \
 
 ---
 
-## 📝 Resumen Ejecutivo
+##  Resumen Ejecutivo
 
 ✅ **Base de Datos:** UNA ÚNICA BD "EscogeTuEnergia"
 ✅ **Documentación:** 5 archivos .md + 3 docker-compose.yml
