@@ -645,7 +645,7 @@ const service = new UserService(mockRepo);
 
 ## Infraestructura y DevOps
 
-### 📦 Scripts de Desarrollo
+### Scripts de Desarrollo
 
 **Frontend:**
 ```bash
@@ -670,7 +670,7 @@ npm run prisma:generate # Generar Prisma Client
 
 ---
 
-### 🔐 Variables de Entorno
+### Variables de Entorno
 
 **Frontend (`.env`):**
 ```env
@@ -723,7 +723,7 @@ Se ejecuta en cada **push** y **pull request**.
 
 ---
 
-### 📝 Características Clave de Arquitectura
+### Características Clave de Arquitectura
 
 | Aspecto | Implementación |
 |--------|-----------------|
@@ -825,7 +825,7 @@ cd ..
 
 ---
 
-### 🗄️ Paso 2: Configurar Base de Datos MySQL
+### Paso 2: Configurar Base de Datos MySQL
 
 #### 2.1 Iniciar servidor MySQL
 
@@ -865,7 +865,7 @@ mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS escogetuenergia CHARACTER SET
 
 ---
 
-### 📦 Paso 3: Instalar Dependencias
+### Paso 3: Instalar Dependencias
 
 #### 3.1 Instalar dependencias Frontend
 ```bash
@@ -887,7 +887,7 @@ cd ..
 
 ---
 
-### 🔄 Paso 4: Ejecutar Migraciones de Base de Datos
+### Paso 4: Ejecutar Migraciones de Base de Datos
 
 **Muy importante:** Las migraciones crean la estructura de la BD.
 
@@ -1016,7 +1016,7 @@ docker-compose down
 
 ---
 
-### 📝 Checklist de Startup
+### Checklist de Startup
 
 ```
 [ ] Node.js 20+ instalado
@@ -1036,7 +1036,7 @@ docker-compose down
 
 ---
 
-### 🔄 Desarrollo Diario
+### Desarrollo Diario
 
 Una vez que todo está levantado:
 

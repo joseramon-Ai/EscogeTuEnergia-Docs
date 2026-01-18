@@ -4,10 +4,10 @@
 
 ---
 
-## 📋 Índice
+## Índice
 
 1. [Descripción General](#descripción-general)
-2. [⚠️ Información Crítica: Base de Datos Compartida](#información-crítica-base-de-datos-compartida)
+2. [Información Crítica: Base de Datos Compartida](#información-crítica-base-de-datos-compartida)
 3. [Instalación Local](#instalación-local)
 4. [Variables de Entorno](#variables-de-entorno)
 5. [Docker & Contenedores](#docker--contenedores)
@@ -64,22 +64,22 @@
 
 ---
 
-## ⚠️ Información Crítica: Base de Datos Compartida
+## Información Crítica: Base de Datos Compartida
 
-### 🔴 **REGLA FUNDAMENTAL**
+### REGLA FUNDAMENTAL
 
 **Escoge tu Energía utiliza UNA ÚNICA base de datos compartida:**
 
 ```
-📦 Base de Datos: EscogeTuEnergia
+Base de Datos: EscogeTuEnergia
    ├── Host: mysql (servicio Docker interno)
-   ├── Puert: 3306
+   ├── Puerto: 3306
    ├── Usuario: joseramon
    ├── Contraseña: ${DB_PASSWORD} (desde .env)
-   └── ⚠️ NUNCA crear otras BD (No usar mysql_main, fork, etc.)
+   └── NUNCA crear otras BD (No usar mysql_main, fork, etc.)
 ```
 
-### ✅ Configuración Correcta
+### Configuración Correcta
 
 **Todos los docker-compose.yml deben usar:**
 
@@ -88,14 +88,14 @@ environment:
   DATABASE_URL: "mysql://joseramon:${DB_PASSWORD}@mysql:3306/EscogeTuEnergia"
 ```
 
-### ❌ Configuración Incorrecta (NO HACER)
+### Configuración Incorrecta (NO HACER)
 
 ```yaml
-# ❌ NO usar mysql_main
+# NO usar mysql_main
 DATABASE_URL: "mysql://joseramon:${DB_PASSWORD}@mysql_main:3306/EscogeTuEnergia"
 
-# ❌ NO crear bases de datos duplicadas
-# ❌ NO usar nombres diferentes (EscogeTu, Fork, Testing, etc.)
+# NO crear bases de datos duplicadas
+# NO usar nombres diferentes (EscogeTu, Fork, Testing, etc.)
 ```
 
 ### 🛠️ Verificación y Limpieza
@@ -338,7 +338,7 @@ curl http://localhost:8080      # Adminer (BD web) - solo en desarrollo
 
 ## Variables de Entorno
 
-### 📝 Formato y Descripción Completa
+### Formato y Descripción Completa
 
 #### Frontend - Variables de Configuración
 
@@ -406,7 +406,7 @@ python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 | `REDIS_URL` | (Futuro) Redis para cache y sesiones | `redis://localhost:6379` | ❌ No |
 | `LOG_LEVEL` | Nivel de logging | `debug`, `info`, `warn`, `error` | ❌ No (default: info) |
 
-### 📦 Archivos de Configuración
+### Archivos de Configuración
 
 #### Estructura de archivos .env
 
@@ -479,7 +479,7 @@ SESSION_SECRET=tu_session_secret_aqui
 REDIS_URL=redis://localhost:6379      # (Futuro)
 ```
 
-### ⚙️ Validación y Testing de Variables
+### Validación y Testing de Variables
 
 ```bash
 # Script para validar que todas las variables requeridas están configuradas
@@ -591,7 +591,7 @@ Configuración con:
 
 Similar al anterior pero con puertos 4010 (backend) y 3006 (frontend).
 
-### 🔄 Ciclo de Vida de Contenedores
+### Ciclo de Vida de Contenedores
 
 ```bash
 # Construcción
@@ -617,7 +617,7 @@ docker compose down                     # Parar y eliminar contenedores
 docker compose down -v                  # Parar y eliminar volúmenes (⚠️ pierde datos)
 ```
 
-### 🔐 Seguridad en Contenedores
+### Seguridad en Contenedores
 
 ```yaml
 # Recomendaciones en docker-compose.yml
@@ -862,7 +862,7 @@ systemctl start escogetuenergia.service
 
 ## CI/CD Pipeline
 
-### 🔄 GitHub Actions Workflow
+### GitHub Actions Workflow
 
 El proyecto incluye CI/CD automático en `.github/workflows/ci.yml`:
 
@@ -972,7 +972,7 @@ while true; do
 done
 ```
 
-### 🚨 Configurar Alertas
+### Configurar Alertas
 
 ```bash
 # Script para alertas básicas

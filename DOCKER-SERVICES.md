@@ -76,7 +76,7 @@ docker compose -p escogetuenergia-fork -f docker-compose.fork.yml logs -f
 - `.env.fork` - Variables para el servicio fork
 - `docker-manager.sh` - Script de gestión de servicios
 
-## 🌐 URLs de Acceso (Producción)
+## URLs de Acceso (Producción)
 
 - **Principal**: http://128.140.64.33:3005
 - **Fork**: http://128.140.64.33:3006
@@ -103,7 +103,7 @@ docker ps | grep escogetuenergia
 2. **Estabilización**: Cuando el fork esté estable, copiar cambios al principal
 3. **Producción**: El servicio principal (puerto 4005/3005) es la versión estable
 
-## 📝 Notas
+## Notas
 
 - Ambos servicios pueden correr simultáneamente sin conflictos
 - Los puertos están configurados para no solaparse

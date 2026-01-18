@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Índice
+## Índice
 
 1. [Información General](#información-general)
 2. [Diagrama Entidad-Relación (ER)](#diagrama-entidad-relación-er)
@@ -45,7 +45,7 @@ server/prisma/schema.prisma
 
 ## Diagrama Entidad-Relación (ER)
 
-### 📊 Diagrama Completo (Mermaid ERD)
+### Diagrama Completo (Mermaid ERD)
 
 ```mermaid
 erDiagram
@@ -427,7 +427,7 @@ erDiagram
 
 ## Diccionario de Datos
 
-### 👤 Tabla: `users`
+### Tabla: `users`
 
 **Descripción**: Almacena la información de los usuarios registrados en la plataforma.
 
@@ -481,7 +481,7 @@ erDiagram
 
 ---
 
-### ⚡ Tabla: `user_energy_profiles`
+### Tabla: `user_energy_profiles`
 
 **Descripción**: Perfil energético del usuario (consumo, tipo de vivienda, instalaciones).
 
@@ -533,7 +533,7 @@ erDiagram
 
 ---
 
-### 💡 Tabla: `tariffs`
+### Tabla: `tariffs`
 
 **Descripción**: Catálogo de tarifas eléctricas disponibles de diferentes compañías.
 
@@ -620,7 +620,7 @@ erDiagram
 
 ---
 
-### 🏆 Tabla: `user_badges`
+### Tabla: `user_badges`
 
 **Descripción**: Insignias/logros desbloqueados por los usuarios.
 
@@ -726,7 +726,7 @@ erDiagram
 
 ---
 
-### 💬 Tabla: `ForumTopic`
+### Tabla: `ForumTopic`
 
 **Descripción**: Temas/hilos de discusión del foro.
 
@@ -792,7 +792,7 @@ erDiagram
 
 ---
 
-### 📊 Enumeraciones (ENUMs)
+### Enumeraciones (ENUMs)
 
 #### `user_energy_profiles_consumption_pattern`
 
@@ -858,7 +858,7 @@ ENUM('pending', 'active', 'completed')
 
 ---
 
-### 🔐 Tipos Especiales y Constraints
+### Tipos Especiales y Constraints
 
 #### UUID (Identificadores Únicos)
 
@@ -906,13 +906,13 @@ Para cantidades monetarias y consumos precisos:
 ```
 
 **Ejemplos**:
-- `12345678.90` ✅
-- `0.05` ✅
-- `999999.99` ✅
+- `12345678.90`
+- `0.05`
+- `999999.99`
 
 ---
 
-### 📅 Formatos de Fecha y Hora
+### Formatos de Fecha y Hora
 
 | Campo | Tipo | Formato | Ejemplo |
 |-------|------|---------|---------|
@@ -925,7 +925,7 @@ Para cantidades monetarias y consumos precisos:
 
 ## Índices y Optimizaciones
 
-### 🚀 Índices Compuestos
+### Índices Compuestos
 
 #### `hourly_consumptions`
 ```sql
@@ -941,7 +941,7 @@ INDEX idx_user_period ON monthly_consumptions(user_id, period);
 
 ---
 
-### 🔍 Índices de Clave Foránea
+### Índices de Clave Foránea
 
 Todos los `FK` tienen índices automáticos:
 - `user_sessions.user_id`
@@ -953,7 +953,7 @@ Todos los `FK` tienen índices automáticos:
 
 ---
 
-### 🎯 Claves Únicas (UNIQUE)
+### Claves Únicas (UNIQUE)
 
 | Tabla | Campo | Propósito |
 |-------|-------|----------|
@@ -991,7 +991,7 @@ users (DELETE)
 
 ---
 
-## 📊 Estadísticas de la Base de Datos
+## Estadísticas de la Base de Datos
 
 | Métrica | Valor |
 |---------|-------|
@@ -1005,7 +1005,7 @@ users (DELETE)
 
 ---
 
-## 🔄 Historial de Migraciones
+## Historial de Migraciones
 
 ```
 20251113002404_init/                    # Migración inicial
@@ -1019,7 +1019,7 @@ users (DELETE)
 
 ---
 
-## 🛠️ Comandos Útiles
+## Comandos Útiles
 
 ### Generar Prisma Client
 ```bash
@@ -1049,7 +1049,7 @@ npx prisma studio
 
 ---
 
-## 📚 Referencias
+## Referencias
 
 - [Prisma Schema Reference](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
 - [MySQL Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)

@@ -1,30 +1,27 @@
-# 📚 Documentación - EscogeTuEnergia
+# Documentación - EscogeTuEnergia
 
 Documentación completa del proyecto **EscogeTuEnergia**: Plataforma integral de gestión y optimización del consumo energético doméstico.
 
 ---
 
-## 📖 Índice de Contenido
+## Índice de Contenido
 
-### 🚀 Inicio Rápido
+### Inicio Rápido
 - [**INSTRUCCIONES_DESCARGA.md**](INSTRUCCIONES_DESCARGA.md) - Guía de instalación y configuración del proyecto
 
-### 🏗️ Arquitectura y Diseño
+### Arquitectura y Diseño
 - [**README_TECNICO.md**](README_TECNICO.md) - Stack tecnológico completo, arquitectura y componentes principales
 - [**INFRAESTRUCTURA.md**](INFRAESTRUCTURA.md) - Infraestructura, DevOps, Docker y despliegue
 - [**DOCKER-SERVICES.md**](DOCKER-SERVICES.md) - Configuración de servicios Docker
 
-### 💻 Desarrollo
+### Desarrollo
 - [**FRONTEND.md**](FRONTEND.md) - Arquitectura, componentes y guía de desarrollo del frontend
 - [**BACKEND_API.md**](BACKEND_API.md) - API REST, endpoints y documentación técnica del backend
 - [**BASE_DE_DATOS.md**](BASE_DE_DATOS.md) - Esquema relacional, modelos Prisma y gestión de datos
 
-### 🔧 Solución de Problemas
-- [**SOLUCION_URGENTE_MYSQL.md**](SOLUCION_URGENTE_MYSQL.md) - Troubleshooting y soluciones comunes
-
 ---
 
-## 📋 Información General
+## Información General
 
 **Proyecto:** EscogeTuEnergia  
 **Versión:** 1.0  
@@ -35,16 +32,16 @@ Documentación completa del proyecto **EscogeTuEnergia**: Plataforma integral de
 
 EscogeTuEnergia es una solución integral para la gestión y optimización del consumo energético doméstico, ofreciendo:
 
-- 🔌 **Comparación de tarifas eléctricas** en tiempo real
-- 📊 **Calculadoras avanzadas** de facturación y consumo
-- 📈 **Análisis de mercado** con visualizaciones interactivas
-- 💡 **Asesoramiento sobre bonificaciones sociales**
-- 🎮 **Gamificación** para fomentar el consumo responsable
-- 📱 **Interfaz responsiva** y accesible
+- **Comparación de tarifas eléctricas** en tiempo real
+- **Calculadoras avanzadas** de facturación y consumo
+- **Análisis de mercado** con visualizaciones interactivas
+- **Asesoramiento sobre bonificaciones sociales**
+- **Gamificación** para fomentar el consumo responsable
+- **Interfaz responsiva** y accesible
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 ### Frontend
 - **React 18.3.1** + TypeScript 5.8.3
@@ -67,11 +64,11 @@ EscogeTuEnergia es una solución integral para la gestión y optimización del c
 
 ---
 
-## 📞 Soporte
+## Soporte
 
 Para más información o preguntas:
-- 📧 Email: joseramon@saturdays.ai
-- 🔗 GitHub: https://github.com/joseramon-Ai/escogetuenergia (repositorio privado con código)
+- Email: joseramon@saturdays.ai
+- GitHub: https://github.com/joseramon-Ai/escogetuenergia (repositorio privado con código)
 
 ---
 
