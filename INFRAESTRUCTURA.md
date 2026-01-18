@@ -76,7 +76,7 @@ Base de Datos: EscogeTuEnergia
    ├── Puerto: 3306
    ├── Usuario: joseramon
    ├── Contraseña: ${DB_PASSWORD} (desde .env)
-   └── NUNCA crear otras BD (No usar mysql_main, fork, etc.)
+   └── Usar siempre la misma BD: EscogeTuEnergia
 ```
 
 ### Configuración Correcta
@@ -95,7 +95,7 @@ environment:
 DATABASE_URL: "mysql://joseramon:${DB_PASSWORD}@mysql_main:3306/EscogeTuEnergia"
 
 # NO crear bases de datos duplicadas
-# NO usar nombres diferentes (EscogeTu, Fork, Testing, etc.)
+# Usar siempre el mismo nombre de BD
 ```
 
 ### ️ Verificación y Limpieza
@@ -234,26 +234,14 @@ npm run lint:watch
 #### Paso 1: Preparar variables de entorno
 
 ```bash
-# Crear archivos .env para diferentes configuraciones
+# Crear archivo .env para configuración
 
-# Configuración principal (localhost)
-cat > .env.main << 'EOF'
+cat > .env << 'EOF'
 DB_PASSWORD=tu_contraseña_mysql
 JWT_ACCESS_SECRET=tu_secret_super_seguro_aqui_32_caracteres_minimo
 JWT_REFRESH_SECRET=tu_refresh_secret_super_seguro_aqui_32_caracteres_minimo
 GOOGLE_SOLAR_API_KEY=tu_google_solar_api_key_aqui
 EOF
-
-# Configuración fork (para testing)
-cat > .env.fork << 'EOF'
-DB_PASSWORD=tu_contraseña_mysql
-JWT_ACCESS_SECRET=tu_secret_super_seguro_aqui_32_caracteres_minimo
-JWT_REFRESH_SECRET=tu_refresh_secret_super_seguro_aqui_32_caracteres_minimo
-GOOGLE_SOLAR_API_KEY=tu_google_solar_api_key_aqui
-EOF
-
-# Crear .env por defecto
-cp .env.main .env
 ```
 
 #### Paso 2: Asegurar que la red Docker existe
@@ -277,29 +265,20 @@ docker network ls | grep data-stack_default
 # Hacer script ejecutable
 chmod +x docker-manager.sh
 
-# Levantar servicio principal (Backend 4005, Frontend 3005)
-./docker-manager.sh main-up
-
-# Levantar servicio fork (Backend 4010, Frontend 3006) - para testing
-./docker-manager.sh fork-up
-
-# Levantar ambos servicios
-./docker-manager.sh all-up
+# Levantar servicios
+./docker-manager.sh up
 
 # Ver estado de los servicios
 ./docker-manager.sh status
 
 # Ver logs en tiempo real
-./docker-manager.sh logs-main
-./docker-manager.sh logs-fork
+./docker-manager.sh logs
 
 # Detener servicios
-./docker-manager.sh main-down
-./docker-manager.sh all-down
+./docker-manager.sh down
 
-# Reconstruir desde cero (useful después de cambios en Dockerfile)
-./docker-manager.sh main-build
-./docker-manager.sh fork-build
+# Reconstruir desde cero (útil después de cambios en Dockerfile)
+./docker-manager.sh build
 ```
 
 **Opción B: Comandos Docker Compose directos**
@@ -420,7 +399,7 @@ python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 server/.env             # Variables específicas del backend (opcional)
 ```
 
-#### Contenido de ejemplo (.env.complete)
+#### Contenido de ejemplo (.env)
 
 ```bash
 # ============================================================
@@ -579,17 +558,13 @@ CMD ["node", "dist/server.js"]
 
 ###  Docker Compose - Configuración
 
-#### docker-compose.yml (Servicio Principal)
+#### docker-compose.yml
 
 Configuración con:
 - Backend en puerto 4005
 - Frontend en puerto 3005
 - Red externa para conexión con MySQL
 - Adminer para gestión de BD en desarrollo
-
-#### docker-compose.fork.yml (Servicio Fork para Testing)
-
-Similar al anterior pero con puertos 4010 (backend) y 3006 (frontend).
 
 ### Ciclo de Vida de Contenedores
 
@@ -1084,25 +1059,21 @@ docker ps -a
 docker ps | grep backend
 docker ps | grep frontend
 
-# Si ves MÚLTIPLES backend, frontend, mysql con nombres diferentes:
-# - backend + escogetuenergia-backend
-# - escogetuenergia-backend-fork + backend-fork
+# Si ves MÚLTIPLES backend, frontend, mysql:
 # ➜ PROBLEMA: Contenedores duplicados
 
-# 3. SOLUCIÓN: Eliminar todos los contenedores de este proyecto
+# 3. SOLUCIÓN: Eliminar todos los contenedores
 docker compose down -v
-docker-compose -f docker-compose.fork.yml down -v
-docker-compose -f docker-compose.main.yml down -v
 
 # 4. Eliminar contenedores FANTASMA (detenidos)
 docker ps -a | grep -E "backend|frontend|escoge" | awk '{print $1}' | xargs docker rm -f
 
 # 5. Verificar puertos libres
-netstat -tuln | grep -E "3005|4005|4010"
+netstat -tuln | grep -E "3005|4005"
 # Si hay algo, matarlo:
 sudo lsof -i :4005 | grep -v COMMAND | awk '{print $2}' | xargs kill -9
 
-# 6. Levantar SOLO el compose principal
+# 6. Levantar servicios
 docker compose up -d
 
 # 7. Verificar que funciona
@@ -1118,11 +1089,9 @@ docker compose logs -f
 | Backend | 4005 | escogetuenergia-backend | ✅ UP |
 | Adminer | 8080 | escogetuenergia-adminer | ✅ UP |
 | (Fork) Backend | 4010 | escogetuenergia-backend-fork | ❌ Detenido |
-| (Fork) Frontend | 3006 | escogetuenergia-frontend-fork | ❌ Detenido |
-
-
-#### 4. "ENOMEM: Out of memory"
-
+| (Fork) Frontend | 3006 | escogetuenergia-fronUP |
+| Backend | 4005 | escogetuenergia-backend | UP |
+| Adminer | 8080 | escogetuenergia-adminer | UP
 **Síntoma:** Proceso se para por falta de memoria.
 
 **Solución:**

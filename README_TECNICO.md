@@ -913,40 +913,38 @@ Deberías ver tablas como: `users`, `bills`, `tariffs`, `gamification_stats`, et
 
 ---
 
-### ▶️ Paso 5: Levantar los Servicios
+### Paso 5: Levantar los Servicios
 
-Abre **3 terminales** (o tabs en tu terminal favorita) y ejecuta cada uno en paralelo:
+Con Docker (Recomendado):
 
-#### Terminal 1: Base de Datos MySQL (si no está como servicio)
 ```bash
-# Opcional si MySQL no está como servicio del sistema
-mysql -u root -p
-# Deja la conexión abierta
-```
-
-#### Terminal 2: Backend (API Server)
-```bash
-cd /home/joseramon/escogetuenergia/escogetuenergia/server
-npm run dev
-
-# Deberías ver algo como:
-# ✓ Servidor escuchando en puerto 4005
-# ✓ Conexión a base de datos establecida
-```
-
-**El backend debe estar disponible en:** `http://localhost:4005`
-
-#### Terminal 3: Frontend (Vite Dev Server)
-```bash
+# Desde la raíz del proyecto
 cd /home/joseramon/escogetuenergia/escogetuenergia
-npm run dev
 
-# Deberías ver algo como:
-# ✓ Local: http://localhost:5173/
-# ✓ Press q to quit
+# Levantar todos los servicios
+docker compose up -d
+
+# Ver logs en tiempo real
+docker compose logs -f
 ```
 
-**El frontend debe estar disponible en:** `http://localhost:5173`
+**Servicios disponibles:**
+- Frontend: `http://localhost:3005`
+- Backend API: `http://localhost:4005`
+- Adminer (gestión BD): `http://localhost:8080`
+
+Sin Docker (desarrollo local):
+
+```bash
+# Terminal 1: Backend
+cd server
+npm run dev
+# Disponible en http://localhost:4005
+
+# Terminal 2: Frontend
+npm run dev
+# Disponible en http://localhost:5173
+```
 
 ---
 
